@@ -21,6 +21,7 @@ const config = {
       screens: {
         "4k": "2560px",
         "2k": "1440px",
+        "3xl": "1920px",
       },
       backgroundImage: {
         "hero": "linear-gradient(135deg, rgba(253,242,233,1) 0%, rgba(253,154,15,1) 130%);",

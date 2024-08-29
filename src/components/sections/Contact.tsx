@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     return (
         <div className={"w-full flex"}>
-            <motion.div className={"w-full h-full flex flex-col lg:flex-row mx-8 my-12 gap-12 lg:mx-24 2xl:mx-48 4k:mx-[40rem] 4k:my-24"}
+            <motion.div className={"w-full h-full flex flex-col lg:flex-row mx-8 my-12 gap-12 lg:mx-36 2xl:mx-48 3xl:mx-64 4k:mx-[50rem] 4k:my-24"}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1}}
