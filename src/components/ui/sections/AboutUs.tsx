@@ -51,7 +51,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div className={"relative hidden lg:flex w-full h-full items-center justify-center -space-x-24"}>
-                        <Image src={"/image.png"} alt={"Image"} width={256} height={256} className={"w-full"}/>
+                        <Image src={"/image.png"} alt={"Image"} width={512} height={512} className={"w-full"}/>
                     </div>
                 </div>
             </motion.div>

@@ -16,9 +16,9 @@ const Contact = () => {
                         id={"contact"}
 
             >
-                <div className={"flex w-full h-full"}>
+                <a className={"flex w-full h-full"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
                     <Image src={"/map.png"} alt={"Map"} width={1024} height={1024} className={"object-cover"}/>
-                </div>
+                </a>
                 <div className={"flex flex-col gap-6 4k:gap-12 w-full h-full"}>
                     <div className={"flex flex-col gap-2"}>
                         <p className={"text-button uppercase font-medium 4k:text-2xl"}>
