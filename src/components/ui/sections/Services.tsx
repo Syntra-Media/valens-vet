@@ -4,8 +4,11 @@ import React from 'react';
 import Image from "next/image";
 import {ArrowRight} from "lucide-react";
 import { motion } from 'framer-motion';
+import {useRouter} from "next/navigation";
 
 const Services = () => {
+    const router = useRouter();
+
     return (
         <div className={"w-full flex"}>
             <motion.div className={"w-full h-full flex flex-col lg:flex-row mx-8 my-24 gap-12 lg:mx-36 2xl:mx-48 3xl:mx-64 4k:mx-[50rem] 4k:my-24"}
@@ -17,7 +20,7 @@ const Services = () => {
 
             >
                 <div className={"w-full h-96 4k:h-[40rem] grid gap-3 grid-cols-3 grid-rows-3"}>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-0.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-0.jpg')] bg-center bg-cover"} onClick={() => router.push("/evde-veterinerlik")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -26,7 +29,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-1.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-1.jpg')] bg-center bg-cover"} onClick={() => router.push("/dahiliye")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -35,7 +38,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-2.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-2.jpg')] bg-center bg-cover"} onClick={() => router.push("cerrahi-mudahaleler")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -44,7 +47,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-3.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-3.jpg')] bg-center bg-cover"} onClick={()=> router.push("/acil-tedavi")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -53,7 +56,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-4.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-4.png')] bg-center bg-cover"} onClick={() => router.push("/agiz-ve-dis-sagligi")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -62,7 +65,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-5.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-5.jpeg')] bg-center bg-cover"} onClick={() => router.push("/koruyucu-hekimlik")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -71,7 +74,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-6.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-6.jpg')] bg-center bg-cover"} onClick={() => router.push("/laboratuvar")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -80,7 +83,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-7.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-7.jpg')] bg-center bg-cover"} onClick={() => router.push("/pet-kuafor")}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -89,7 +92,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-8.png')]"}>
+                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-8.jpg')] bg-center bg-cover"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>

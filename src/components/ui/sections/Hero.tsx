@@ -31,12 +31,12 @@ const Hero = () => {
                         <Image src={"/dog.png"} alt={"Köpek"} width={700} height={700}
                                className={"z-[100] absolute w-full top-48 opacity-30 lg:opacity-100 lg:w-[30rem] lg:top-24 2xl:w-[40rem] 2xl:top-40 4k:hidden"}/>
                         {/* Left */}
-                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-48 lg:left-0 2xl:left-32 2xl:-bottom-52 3xl:-bottom-64 lg:flex"} image={"/minitestimonial1.jpg"} name={"Furkan Esen"} comment={"Köpeğimiz de bizim gibi mutlu"} stars={5} role={"Köpek sahibi"}/>
-                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-96 lg:-left-8 2xl:left-20 2xl:-bottom-[24rem] 3xl:-bottom-[28rem] lg:flex"} image={"/minitestimonial2.jpg"} name={"Emir Ayaz"} comment={"Kedimiz gülümseyerek geliyor"} stars={4} role={"Kedi sahibi"}/>
+                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-48 lg:left-0 2xl:left-32 2xl:-bottom-52 3xl:-bottom-64 lg:flex"} image={"/client6.png"} name={"Eda Ballı"} comment={"Aradığım ilacı buldum ve doktor güler yüzlü"} stars={5} role={"Pet sahibi"}/>
+                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-96 lg:-left-8 2xl:left-20 2xl:-bottom-[24rem] 3xl:-bottom-[28rem] lg:flex"} image={"/client7.png"} name={"Mazlum Gülten"} comment={"Çok temiz ve hijyenik bir klinik"} stars={5} role={"Kedi sahibi"}/>
 
                         {/* Right */}
-                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-48 lg:right-0 2xl:right-32 2xl:-bottom-52 3xl:-bottom-64 lg:flex"} image={"/minitestimonial1.jpg"} name={"Furkan Esen"} comment={"Köpeğimiz de bizim gibi mutlu"} stars={5} role={"Köpek sahibi"}/>
-                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-96 lg:-right-8 2xl:right-20 2xl:-bottom-[24rem] 3xl:-bottom-[28rem] lg:flex"} image={"/minitestimonial2.jpg"} name={"Emir Ayaz"} comment={"Kedimiz gülümseyerek geliyor"} stars={4} role={"Kedi sahibi"}/>
+                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-48 lg:right-0 2xl:right-32 2xl:-bottom-52 3xl:-bottom-64 lg:flex"} image={"/client4.png"} name={"Berat Berke Yavuzkılıç"} comment={"Ekibi ile güven veren bir klinik"} stars={5} role={"Pet sahibi"}/>
+                        <TestimonialMiniCard className={"absolute hidden lg:-bottom-96 lg:-right-8 2xl:right-20 2xl:-bottom-[24rem] 3xl:-bottom-[28rem] lg:flex"} image={"/client5.png"} name={"Zeynep Akdere"} comment={"İşini en iyisiyle yapan ilgili hekimler"} stars={5} role={"Pet sahibi"}/>
 
                     </motion.div>
                 </div>
