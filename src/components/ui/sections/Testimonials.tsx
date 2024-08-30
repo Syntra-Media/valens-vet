@@ -78,7 +78,7 @@ const Testimonials = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className={"flex gap-3 items-center w-full h-full mt-12"}>
+                        <div className={"flex gap-6 lg:gap-3 items-center w-full h-full mt-12"}>
                             <div className={"flex -space-x-4"}>
                                 <Image src={"/client.png"} alt={"Client"} width={128} height={128}
                                        className={"w-8 h-8 border-light border rounded-full"}/>

@@ -57,10 +57,10 @@ const Contact = () => {
                             </p>
                         </div>
                     </div>
-                    <div className={"flex gap-2 text-button items-center 4k:text-2xl cursor-pointer"}>
+                    <a className={"flex gap-2 text-button items-center 4k:text-2xl cursor-pointer"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
                         <p>Yol Tarifi Al</p>
                         <ArrowRight size={16}/>
-                    </div>
+                    </a>
                 </div>
             </motion.div>
         </div>
