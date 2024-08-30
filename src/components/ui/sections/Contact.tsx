@@ -13,6 +13,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1}}
                         viewport={{once: true}}
+                        id={"contact"}
 
             >
                 <div className={"flex w-full h-full"}>

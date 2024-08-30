@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
-import {ChevronDown, Home, Menu, XCircle} from "lucide-react";
+import {ArrowLeft, ChevronDown, Home, Menu, XCircle} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {
     NavigationMenu, NavigationMenuContent,
@@ -11,7 +11,8 @@ import {
     NavigationMenuTrigger
 } from "@/components/ui/NavigationMenu";
 import {Button} from "@/components/ui/Button";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
+import {useRouter} from "next/navigation";
 
 const ROUTES = [
     {
@@ -39,90 +40,139 @@ const ROUTES = [
 const SERVICES = [
     {
         name: "Evde Veterinerlik",
-        href: "/servisler/evde-veterinerlik",
+        href: "/evde-veterinerlik",
     },
     {
         name: "Dahiliye",
-        href: "/servisler/dahiliye",
+        href: "/dahiliye",
     },
     {
         name: "Cerrahi",
-        href: "/servisler/cerrahi",
+        href: "/cerrahi",
     },
     {
         name: "Acil Tedavi",
-        href: "/servisler/acil-tedavi",
+        href: "/acil-tedavi",
     },
     {
         name: "Ağız ve Diş Sağlığı",
-        href: "/servisler/agiz-ve-dis-sagligi",
+        href: "/agiz-ve-dis-sagligi",
     },
     {
         name: "Koruyucu Hekimlik",
-        href: "/servisler/koruyucu-hekimlik",
+        href: "/koruyucu-hekimlik",
     },
     {
         name: "Laboratuvar",
-        href: "/servisler/laboratuvar",
+        href: "/laboratuvar",
     },
     {
         name: "Pet Kuaför",
-        href: "/servisler/pet-kuaför",
+        href: "/pet-kuaför",
     }
 ]
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
+    const [NavigationMenuOpen, setNavigationMenuOpen] = useState(false);
+
+    const router = useRouter();
 
     useEffect(() => {
         const section = document.getElementById(activeSection);
         if (section) {
             section.scrollIntoView({behavior: "smooth"});
         }
-    }, [activeSection, setActiveSection])
+
+        if (menuOpen) {
+            setMenuOpen(false);
+        }
+    }, [activeSection])
 
     return (
         <motion.div className={"flex w-full h-20 absolute 4k:h-40"}
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 1}}
+            viewport={{once: true}}
         >
             <div className={"flex justify-between items-center w-full h-full mx-12 2xl:text-xl 4k:text-4xl"}>
-                <Image src={"/valenslogo.png"} alt={"Valens Veteriner Kliniği"} width={200} height={200}/>
-                <div className={"sm:hidden flex"}>
+                <Image src={"/valenslogo.png"} alt={"Valens Veteriner Kliniği"} width={200} height={200} onClick={() => router.push("/")}/>
+                <div className={"sm:hidden flex z-20"}>
                     <button onClick={() => setMenuOpen(!menuOpen)} className={"flex items-center"}>
-                        <Menu size={32} className={cn("text-primary transition-all", menuOpen && "rotate-90")}/>
+                        <Menu size={32} className={cn("text-button transition-all", menuOpen && "rotate-90")}/>
                     </button>
+                    <AnimatePresence>
                         {
                             menuOpen && (
-                                <div
-                                    className={"fixed w-full h-screen backdrop-blur flex flex-col justify-center top-0 right-0 bg-primary/50 border border-border rounded-lg shadow-lg text-xl"}>
-                                    {
-                                        ROUTES.map((route, index) => (
-                                            <button key={index} onClick={() => setActiveSection(route.section)}
-                                                    className={cn("flex items-center justify-center gap-4 w-full px-8 py-4", activeSection === route.section && "bg-light foreground-primary")}>
-                                                <span>{route.name}</span>
+                                <motion.div
+                                    className={"fixed w-full h-screen backdrop-blur flex flex-col justify-center items-center top-0 right-0 bg-primary/50 border border-border rounded-lg shadow-lg text-xl"}
+                                    initial={{opacity: 0, x: 100}}
+                                    animate={{opacity: 1, x: 0}}
+                                    exit={{opacity: 0, x: 100}}
+                                >
+                                    <div
+                                        className={cn("flex flex-col gap-4 items-center text-light", NavigationMenuOpen && "hidden")}>
+                                        <button onClick={() => setActiveSection(ROUTES[0].section)}
+                                                className={cn("flex items-center", activeSection === "home" && "text-button")}>
+                                            {ROUTES[0].name}
+                                        </button>
+                                        <button onClick={() => setActiveSection(ROUTES[1].section)}
+                                                className={cn("flex items-center", activeSection === "about" && "text-button")}>
+                                            {ROUTES[1].name}
+                                        </button>
+                                        <button onClick={() => setNavigationMenuOpen(!NavigationMenuOpen)} className={"flex"}>
+                                            {ROUTES[2].name} <ChevronDown size={24}
+                                                                          className={cn("transition-all", NavigationMenuOpen && "rotate-180")}/>
+                                        </button>
+                                        <button onClick={() => setActiveSection(ROUTES[3].section)}
+                                                className={cn("flex items-center", activeSection === "testimonials" && "text-button")}>
+                                            {ROUTES[3].name}
+                                        </button>
+                                        <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
+                                                onClick={() => setActiveSection("contact")}>
+                                            Bize Ulaş
+                                        </Button>
+                                    </div>
+                                    <div
+                                        className={cn("hidden flex-col gap-4 items-center text-light", NavigationMenuOpen && "flex")}>
+                                        {
+                                            SERVICES.map((route, index) => (
+                                                <button key={index} onClick={() => router.push(route.href)}>
+                                                    {route.name}
+                                                </button>
+                                            ))
+                                        }
+                                        <div
+                                            className={"absolute left-0 top-0 flex items-center justify-start gap-4 px-8 py-8"}
+                                        >
+                                            <button onClick={() => setNavigationMenuOpen(!NavigationMenuOpen)}>
+                                                <ArrowLeft size={36}/>
                                             </button>
-                                        ))
-
-                                    }
-                                    <button
-                                        className={"absolute right-0 top-0 flex items-center justify-end gap-4 w-full px-8 py-8"}
-                                        onClick={() => setMenuOpen(!menuOpen)}>
-                                        <XCircle size={36}/>
-                                    </button>
-                                </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={"absolute right-0 top-0 flex items-center justify-end gap-4 px-8 py-8"}
+                                    >
+                                        <button onClick={() => setMenuOpen(!menuOpen)}>
+                                            <XCircle size={36} className={"text-white"}/>
+                                        </button>
+                                    </div>
+                                </motion.div>
                             )
                         }
+                    </AnimatePresence>
                 </div>
-                <div className={"gap-6 items-center hidden sm:flex cursor-pointer"}>
-                    <a onClick={() => setActiveSection(ROUTES[0].section)} className={cn("flex items-center", activeSection === "home" && "text-primary")}>
-                        {ROUTES[0].name}
-                    </a>
-                    <a onClick={() => setActiveSection(ROUTES[1].section)} className={cn("flex items-center", activeSection === "about" && "text-primary")}>
+                <div className={"gap-6 z-20 items-center hidden sm:flex cursor-pointer"}>
+                    <button onClick={() => setActiveSection(ROUTES[0].section)}
+                            className={cn("flex items-center", activeSection === "home" && "text-button")}>
+                    {ROUTES[0].name}
+                    </button>
+                    <button onClick={() => setActiveSection(ROUTES[1].section)}
+                            className={cn("flex items-center", activeSection === "about" && "text-button")}>
                         {ROUTES[1].name}
-                    </a>
+                    </button>
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
@@ -145,17 +195,18 @@ const Header = () => {
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
-                    <a onClick={() => setActiveSection(ROUTES[3].section)}
-                            className={cn("flex items-center", activeSection === "testimonials" && "text-primary")}>
+                    <button onClick={() => setActiveSection(ROUTES[3].section)}
+                            className={cn("flex items-center", activeSection === "testimonials" && "text-button")}>
                         {ROUTES[3].name}
-                    </a>
-                    <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}>
+                    </button>
+                    <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
+                            onClick={() => setActiveSection("contact")}>
                         Bize Ulaş
                     </Button>
                 </div>
             </div>
         </motion.div>
-);
+    );
 };
 
 export default Header;

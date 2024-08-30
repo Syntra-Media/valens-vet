@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <div className={"w-full h-screen bg-hero flex flex-col justify-center"}>
-            <div className={"relative flex w-full h-full flex-col items-center py-60 4k:py-0 4k:justify-center overflow-y-hidden"}>
+            <div id={"home"} className={"relative flex w-full h-full flex-col items-center py-60 4k:py-0 4k:justify-center overflow-y-hidden"}>
                 <div className={"flex relative justify-center"}>
                     <motion.h1 className={"text-[1.75rem] text-center font-medium lg:text-6xl 2xl:text-8xl 4k:text-[12rem]"}
                                  initial={{opacity: 0}}
@@ -27,7 +27,7 @@ const Hero = () => {
                                     animate={{opacity: 1}}
                                     transition={{duration: 1, delay: 0.5}}
                     >
-                        <span className={"w-full h-4 lg:h-6 absolute -bottom-0 lg:-bottom-1 bg-button z-0 2xl:h-8 4k:h-16"}></span>
+                        <span className={"w-full h-4 lg:h-6 absolute -bottom-0 lg:-bottom-1 bg-button z-0 2xl:h-8 4k:h-16 xs:hidden"}></span>
                         <Image src={"/dog.png"} alt={"Köpek"} width={700} height={700}
                                className={"z-[100] absolute w-full top-48 opacity-30 lg:opacity-100 lg:w-[30rem] lg:top-24 2xl:w-[40rem] 2xl:top-40 4k:hidden"}/>
                         {/* Left */}
