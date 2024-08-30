@@ -21,7 +21,7 @@ const AboutUs = () => {
                         için en uygun
                         veteriner kliniği</h2>
                 </div>
-                <div className={"w-full flex gap-24"}>
+                <div className={"w-full flex gap-24 items-center"}>
                     <div className={"flex w-full flex-col gap-8"}>
                         <div className={"flex flex-col gap-1"}>
                             <p className={"uppercase font-medium text-sm text-foreground/60 4k:text-3xl"}>
@@ -45,20 +45,15 @@ const AboutUs = () => {
                                     sağlıyoruz.
                                 </p>
                             </div>
+                            <p className={"flex items-center text-button gap-2 text-left 4k:text-2xl"}>
+                                Daha fazla bilgi al <span><ArrowRight size={12}/></span>
+                            </p>
                         </div>
                     </div>
                     <div className={"relative hidden lg:flex w-full h-full items-center justify-center -space-x-24"}>
-                        <Image src={"/image.png"} alt={"Image"} width={512} height={512}
-                               className={"absolute top-3 right-24 w-52 2xl:w-64 2xl:right-28 3xl:right-36 4k:w-96 4k:right-80"}/>
-                        <Image src={"/image1.png"} alt={"Image"} width={512} height={512}
-                               className={"absolute top-24 w-52 2xl:w-64 4k:w-96"}/>
-                        <Image src={"/image2.png"} alt={"Image"} width={512} height={512}
-                               className={"absolute left-24 top-12 w-52 2xl:w-64 2xl:left-28 3xl:left-36 4k:w-96 4k:left-80"}/>
+                        <Image src={"/image.png"} alt={"Image"} width={256} height={256} className={"w-full"}/>
                     </div>
                 </div>
-                <p className={"flex items-center text-button gap-2 text-left 4k:text-2xl"}>
-                    Daha fazla bilgi al <span><ArrowRight size={12}/></span>
-                </p>
             </motion.div>
         </div>
     );

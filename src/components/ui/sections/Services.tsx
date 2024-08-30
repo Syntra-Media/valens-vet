@@ -21,7 +21,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Genel Sağlık Kontrolleri
+                                    Evde Veterinerlik
                                 </p>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Aşılama ve Koruyucu Sağlık Hizmetleri
+                                    Dahiliye
                                 </p>
                             </div>
                         </div>
@@ -39,7 +39,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Diş Bakımı ve Temizliği
+                                    Cerrahi Müdahaleler
                                 </p>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Cerrahi Müdahaleler
+                                    Acil Tedavi
                                 </p>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Laboratuvar Testi ve Tanı
+                                    Ağız ve Diş Sağlığı
                                 </p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Röntgen ve Ultrasonografi
+                                    Koruyucu Hekimlik
                                 </p>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Acil Durum Hizmetleri
+                                    Laboratuvar
                                 </p>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Beslenme ve Diyet Danışmanlığı
+                                    Pet Kuaför
                                 </p>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ const Services = () => {
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
-                                    Beslenme ve Diyet Danışmanlığı
+                                    Diğer
                                 </p>
                             </div>
                         </div>
