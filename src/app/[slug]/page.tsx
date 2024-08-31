@@ -259,7 +259,7 @@ const Page = ({ params }: {params: {slug: string}}) => {
                         ))
                     }
                 </div>
-                <div className={"flex"}>
+                <div className={"flex mt-4"}>
                     <Button variant={"default"} size={"lg"} className={"w-max"}>
                         Bize Ulaş
                     </Button>

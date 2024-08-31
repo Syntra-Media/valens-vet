@@ -20,7 +20,7 @@ const Services = () => {
 
             >
                 <div className={"w-full h-96 4k:h-[40rem] grid gap-3 grid-cols-3 grid-rows-3"}>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-0.jpg')] bg-center bg-cover"} onClick={() => router.push("/evde-veterinerlik")}>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-0.jpg')] bg-center bg-cover"} href={"/evde-veterinerlik"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -28,8 +28,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-1.jpg')] bg-center bg-cover"} onClick={() => router.push("/dahiliye")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-1.jpg')] bg-center bg-cover"} href={"/dahiliye"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -37,8 +37,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-2.jpg')] bg-center bg-cover"} onClick={() => router.push("cerrahi-mudahaleler")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-2.jpg')] bg-center bg-cover"} href={"/cerrahi"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -46,8 +46,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-3.jpg')] bg-center bg-cover"} onClick={()=> router.push("/acil-tedavi")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-3.jpg')] bg-center bg-cover"} href={"/acil-tedavi"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -55,8 +55,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-4.png')] bg-center bg-cover"} onClick={() => router.push("/agiz-ve-dis-sagligi")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-4.png')] bg-center bg-cover"} href={"/agiz-ve-dis-sagligi"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -64,8 +64,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-5.jpeg')] bg-center bg-cover"} onClick={() => router.push("/koruyucu-hekimlik")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-5.jpeg')] bg-center bg-cover"} href={"/koruyucu-hekimlik"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -73,8 +73,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-6.jpg')] bg-center bg-cover"} onClick={() => router.push("/laboratuvar")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-6.jpg')] bg-center bg-cover"} href={"/laboratuvar"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -82,8 +82,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-7.jpg')] bg-center bg-cover"} onClick={() => router.push("/pet-kuafor")}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-7.jpg')] bg-center bg-cover"} href={"/pet-kuafor"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -91,8 +91,8 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className={"flex relative overflow-hidden rounded-lg bg-[url('/image-8.jpg')] bg-center bg-cover"}>
+                    </a>
+                    <a className={"flex relative overflow-hidden rounded-lg bg-[url('/image-8.jpg')] bg-center bg-cover"}>
                         <div className={"flex w-full h-full bg-service z-10"}>
                             <div className={"flex flex-col w-full h-full p-4 justify-end text-light text-xs 4k:text-2xl"}>
                                 <p>
@@ -100,7 +100,7 @@ const Services = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div className={"flex flex-col w-full gap-4 h-full 4k:gap-12"}>
                     <div className={"flex flex-col gap-1"}>

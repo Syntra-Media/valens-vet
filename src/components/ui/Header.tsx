@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/NavigationMenu";
 import {Button} from "@/components/ui/Button";
 import {AnimatePresence, motion} from "framer-motion";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 const ROUTES = [
     {
@@ -77,6 +77,7 @@ const Header = () => {
     const [activeSection, setActiveSection] = useState("home");
     const [NavigationMenuOpen, setNavigationMenuOpen] = useState(false);
 
+    const pathname = usePathname();
     const router = useRouter();
 
     useEffect(() => {
@@ -88,7 +89,11 @@ const Header = () => {
         if (menuOpen) {
             setMenuOpen(false);
         }
-    }, [activeSection])
+
+        if (NavigationMenuOpen) {
+            setNavigationMenuOpen(false);
+        }
+    }, [activeSection, pathname])
 
     return (
         <motion.div className={"flex w-full h-20 absolute 4k:h-40"}
@@ -139,9 +144,9 @@ const Header = () => {
                                         className={cn("hidden flex-col gap-4 items-center text-light", NavigationMenuOpen && "flex")}>
                                         {
                                             SERVICES.map((route, index) => (
-                                                <button key={index} onClick={() => router.push(route.href)}>
+                                                <a key={index} href={route.href}>
                                                     {route.name}
-                                                </button>
+                                                </a>
                                             ))
                                         }
                                         <div

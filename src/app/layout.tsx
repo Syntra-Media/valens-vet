@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import React from "react";
 import "./globals.css";
 import Header from "@/components/ui/Header";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,16 @@ const RootLayout = ({ children }: {children: React.ReactNode}) => {
   return (
       <html lang="tr">
         <body className={`${inter.className} bg-light text-foreground overflow-x-hidden`}>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS7QHMKHRP"></script>
+            <Script id="google-analytics" strategy="lazyOnload">
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-VS7QHMKHRP');
+                `}
+            </Script>
             <Header/>
             {children}
         </body>

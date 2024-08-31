@@ -43,17 +43,17 @@ const Contact = () => {
                         <div className={"flex gap-3 items-center"}>
                             <Phone size={24} className={"text-button lg:text-lg 4k:text-2xl"}/>
                             <p className={"text-sm text-foreground/50 font-medium lg:text-lg 4k:text-2xl"}>
-                                Telefon Numarası: <a href={"tel:+905465952986"} className={"font-normal"}>+90 (546) 595
-                                29 86</a>
+                                Telefon Numarası: <a href={"tel:+902128774903"} className={"font-normal"}>+90 (212) 877
+                                49 03</a>
                                 <br/>
-                                WhatsApp Hattı: <a href={"https://wa.me/905465952986"} className={"font-normal"}>+90
-                                (546) 595 29 86</a>
+                                WhatsApp Hattı: <a href={"https://wa.me/905551541833"} className={"font-normal"}>+90
+                                (555) 154 18 33</a>
                             </p>
                         </div>
                         <div className={"flex gap-3 items-center"}>
                             <Mail size={24} className={"text-button lg:text-lg 4k:text-2xl"}/>
                             <p className={"text-sm text-foreground/50 font-medium lg:text-lg 4k:text-2xl"}>
-                                E-posta adresi: <a className={"font-normal"} href={"mailto:valensvet@valensvet.com"}>valensvet@valensvet.com</a>
+                                E-posta adresi: <a className={"font-normal"} href={"mailto:valensveteriner@gmail.com"}>valensveteriner@gmail.com</a>
                             </p>
                         </div>
                     </div>
