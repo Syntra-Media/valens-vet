@@ -68,7 +68,7 @@ const SERVICES = [
     },
     {
         name: "Pet Kuaför",
-        href: "/pet-kuaför",
+        href: "/pet-kuafor",
     }
 ]
 
