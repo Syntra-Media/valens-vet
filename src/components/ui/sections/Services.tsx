@@ -102,7 +102,7 @@ const Services = () => {
                         </div>
                     </a>
                 </div>
-                <div className={"flex flex-col w-full gap-4 h-full 4k:gap-12"}>
+                <div className={"flex flex-col w-full gap-8 h-full 4k:gap-12"}>
                     <div className={"flex flex-col gap-1"}>
                         <p className={"uppercase text-button font-medium 4k:text-2xl"}>Hizmetlerimiz</p>
                         <p className={"text-3xl font-medium 4k:text-6xl"}>
