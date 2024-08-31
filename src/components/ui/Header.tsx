@@ -13,27 +13,28 @@ import {
 import {Button} from "@/components/ui/Button";
 import {AnimatePresence, motion} from "framer-motion";
 import {usePathname, useRouter} from "next/navigation";
+import Link from "next/link";
 
 const ROUTES = [
     {
         name: "Anasayfa",
-        section: "home",
+        href: "home",
     },
     {
         name: "Hakkımızda",
-        section: "about",
+        href: "about",
     },
     {
         name: "Hizmetlerimiz",
-        section: "services",
+        href: "services",
     },
     {
         name: "Müşteri Yorumları",
-        section: "testimonials",
+        href: "testimonials",
     },
     {
         name: "İletişim",
-        section: "contact",
+        href: "contact",
     }
 ]
 
@@ -81,10 +82,8 @@ const Header = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const section = document.getElementById(activeSection);
-        if (section) {
-            section.scrollIntoView({behavior: "smooth"});
-        }
+        const domSection = document.getElementById(activeSection);
+        domSection?.scrollIntoView({behavior: "smooth"});
 
         if (menuOpen) {
             setMenuOpen(false);
@@ -95,15 +94,24 @@ const Header = () => {
         }
     }, [activeSection, pathname])
 
+    const handleClick = (section: string) => {
+        setActiveSection(section);
+
+        if (pathname !== "/") {
+            router.push("/")
+        }
+    }
+
     return (
         <motion.div className={"flex w-full h-20 absolute 4k:h-40"}
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 1}}
-            viewport={{once: true}}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration: 1}}
+                    viewport={{once: true}}
         >
             <div className={"flex justify-between items-center w-full h-full mx-12 2xl:text-xl 4k:text-4xl"}>
-                <Image src={"/valenslogo.png"} alt={"Valens Veteriner Kliniği"} width={200} height={200} onClick={() => router.push("/")}/>
+                <Image src={"/valenslogo.png"} alt={"Valens Veteriner Kliniği"} width={200} height={200}
+                       onClick={() => router.push("/")}/>
                 <div className={"sm:hidden flex z-20"}>
                     <button onClick={() => setMenuOpen(!menuOpen)} className={"flex items-center"}>
                         <Menu size={32} className={cn("text-button transition-all", menuOpen && "rotate-90")}/>
@@ -119,26 +127,23 @@ const Header = () => {
                                 >
                                     <div
                                         className={cn("flex flex-col gap-4 items-center text-light", NavigationMenuOpen && "hidden")}>
-                                        <button onClick={() => setActiveSection(ROUTES[0].section)}
-                                                className={cn("flex items-center", activeSection === "home" && "text-button")}>
+                                        <a onClick={() => handleClick(ROUTES[0].href)}>
                                             {ROUTES[0].name}
-                                        </button>
-                                        <button onClick={() => setActiveSection(ROUTES[1].section)}
-                                                className={cn("flex items-center", activeSection === "about" && "text-button")}>
+                                        </a>
+                                        <a onClick={() => handleClick(ROUTES[1].href)}>
                                             {ROUTES[1].name}
-                                        </button>
-                                        <button onClick={() => setNavigationMenuOpen(!NavigationMenuOpen)} className={"flex"}>
+                                        </a>
+                                        <a onClick={() => setNavigationMenuOpen(!NavigationMenuOpen)}
+                                                className={"flex"}>
                                             {ROUTES[2].name} <ChevronDown size={24}
                                                                           className={cn("transition-all", NavigationMenuOpen && "rotate-180")}/>
-                                        </button>
-                                        <button onClick={() => setActiveSection(ROUTES[3].section)}
-                                                className={cn("flex items-center", activeSection === "testimonials" && "text-button")}>
+                                        </a>
+                                        <a onClick={() => handleClick(ROUTES[3].href)}>
                                             {ROUTES[3].name}
-                                        </button>
-                                        <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
-                                                onClick={() => setActiveSection("contact")}>
-                                            Bize Ulaş
-                                        </Button>
+                                        </a>
+                                        <a onClick={() => handleClick(ROUTES[4].href)}>
+                                            {ROUTES[4].name}
+                                        </a>
                                     </div>
                                     <div
                                         className={cn("hidden flex-col gap-4 items-center text-light", NavigationMenuOpen && "flex")}>
@@ -170,14 +175,12 @@ const Header = () => {
                     </AnimatePresence>
                 </div>
                 <div className={"gap-6 z-20 items-center hidden sm:flex cursor-pointer"}>
-                    <button onClick={() => setActiveSection(ROUTES[0].section)}
-                            className={cn("flex items-center", activeSection === "home" && "text-button")}>
-                    {ROUTES[0].name}
-                    </button>
-                    <button onClick={() => setActiveSection(ROUTES[1].section)}
-                            className={cn("flex items-center", activeSection === "about" && "text-button")}>
+                    <a onClick={() => handleClick(ROUTES[0].href)}>
+                        {ROUTES[0].name}
+                    </a>
+                    <a onClick={() => handleClick(ROUTES[1].href)}>
                         {ROUTES[1].name}
-                    </button>
+                    </a>
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
@@ -200,13 +203,14 @@ const Header = () => {
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
-                    <button onClick={() => setActiveSection(ROUTES[3].section)}
-                            className={cn("flex items-center", activeSection === "testimonials" && "text-button")}>
+                    <a onClick={() => handleClick(ROUTES[3].href)}>
                         {ROUTES[3].name}
-                    </button>
+                    </a>
                     <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
-                            onClick={() => setActiveSection("contact")}>
-                        Bize Ulaş
+                    >
+                        <a onClick={() => handleClick(ROUTES[4].href)}>
+                            {ROUTES[4].name}
+                        </a>
                     </Button>
                 </div>
             </div>
