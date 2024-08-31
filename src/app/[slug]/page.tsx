@@ -261,10 +261,14 @@ const Page = ({ params }: {params: {slug: string}}) => {
                 </div>
                 <div className={"flex mt-4"}>
                     <Button variant={"default"} size={"lg"} className={"w-max"}>
-                        Bize Ulaş
+                        <a href={"tel:+902128774903"}>
+                            Bize Ulaş
+                        </a>
                     </Button>
-                    <Button variant={"ghost"} size={"lg"} className={"w-max"} onClick={() => router.push("/")}>
-                        Anasayfaya Dön
+                    <Button variant={"ghost"} size={"lg"} className={"w-max"}>
+                        <a href={"/"}>
+                            Anasayfaya Dön
+                        </a>
                     </Button>
                 </div>
             </motion.div>

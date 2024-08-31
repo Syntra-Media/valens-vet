@@ -16,7 +16,7 @@ const Contact = () => {
                         id={"contact"}
 
             >
-                <a className={"flex w-full h-full"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
+                <a className={"hidden w-full h-full lg:flex"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
                     <Image src={"/map.png"} alt={"Map"} width={1024} height={1024} className={"object-cover"}/>
                 </a>
                 <div className={"flex flex-col gap-6 4k:gap-12 w-full h-full"}>
@@ -29,15 +29,17 @@ const Contact = () => {
                         </p>
                     </div>
                     <p className={"text-foreground/50 2xl:text-xl 4k:text-3xl"}>
-                        Valens Veteriner Kliniği olarak, deneyimli ve uzman veteriner hekimlerimizle, evcil hayvanlarınızın sağlığını en iyi şekilde koruma
+                        Valens Veteriner Kliniği olarak, deneyimli ve uzman veteriner hekimlerimizle, evcil
+                        hayvanlarınızın sağlığını en iyi şekilde koruma
                         ve tedavi etme amacıyla hizmet veriyoruz.
                     </p>
                     <div className={"flex flex-col gap-2"}>
-                        <div className={"flex gap-3 items-center"}>
+                        <div className={"hidden lg:flex gap-3 items-center"}>
                             <MapPin size={24} className={"text-button lg:text-lg 4k:text-2xl"}/>
                             <p className={"text-sm text-foreground/50 lg:text-lg 4k:text-2xl"}>
-                                Merkez Mahallesi, Elmas Sokağı, Beyaz Rezidans B Blok No:65F, 34245
-                                Gaziosmanpaşa/İstanbul
+                                Merkez Mahallesi, Elmas Sokağı, Beyaz Rezidans B Blok
+                                <br/>
+                                No:65F, Gaziosmanpaşa/İstanbul
                             </p>
                         </div>
                         <div className={"flex gap-3 items-center"}>
@@ -53,13 +55,21 @@ const Contact = () => {
                         <div className={"flex gap-3 items-center"}>
                             <Mail size={24} className={"text-button lg:text-lg 4k:text-2xl"}/>
                             <p className={"text-sm text-foreground/50 font-medium lg:text-lg 4k:text-2xl"}>
-                                E-posta adresi: <a className={"font-normal"} href={"mailto:valensveteriner@gmail.com"}>valensveteriner@gmail.com</a>
+                                E-posta adresi: <a className={"font-normal"}
+                                                   href={"mailto:valensveteriner@gmail.com"}>valensveteriner@gmail.com</a>
                             </p>
                         </div>
                     </div>
-                    <a className={"flex gap-2 text-button items-center 4k:text-2xl cursor-pointer"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
+                    <a className={"flex gap-2 text-button items-center 4k:text-2xl cursor-pointer"}
+                       href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
                         <p>Yol Tarifi Al</p>
                         <ArrowRight size={16}/>
+                    </a>
+                    <a className={"flex flex-col gap-2 w-full h-full lg:hidden justify-center"} href={"https://maps.app.goo.gl/2kC71BBXjmPud67E8"}>
+                        <Image src={"/map.png"} alt={"Map"} width={1024} height={1024} className={"object-cover"}/>
+                        <p className={"text-center text-sm text-foreground/50"}>
+                            Merkez Mahallesi, Elmas Sokağı, Beyaz Rezidans B Blok No:65F, 34245 Gaziosmanpaşa/İstanbul
+                        </p>
                     </a>
                 </div>
             </motion.div>
