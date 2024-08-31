@@ -78,7 +78,7 @@ const Testimonials = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className={"flex flex-col gap-2 lg:flex-row lg:gap-3 justify-center lg:items-center w-full h-full mt-12"}>
+                        <div className={"flex flex-col gap-2 lg:flex-row lg:gap-3 justify-center lg:justify-start lg:items-center w-full h-full mt-12"}>
                             <div className={"flex -space-x-4"}>
                                 <Image src={"/client.png"} alt={"Client"} width={128} height={128}
                                        className={"w-8 h-8 border-light border rounded-full"}/>

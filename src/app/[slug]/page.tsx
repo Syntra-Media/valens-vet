@@ -228,7 +228,7 @@ const Page = ({ params }: {params: {slug: string}}) => {
                 transition={{duration: 1}}
             >
                 <div className={"relative flex justify-center"}>
-                    <h1 className={"text-4xl lg:text-7xl z-20 font-medium"}>
+                    <h1 className={"text-4xl lg:text-7xl z-10 font-medium"}>
                         {service?.name}
                     </h1>
                     <motion.div className={"flex absolute w-[calc(100%+1rem)] h-full z-0 justify-center"}
