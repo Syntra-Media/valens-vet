@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className={"w-full h-screen bg-hero flex flex-col justify-center"}>
+        <div className={"w-full h-screen bg-hero flex flex-col justify-center overflow-x-hidden"}>
             <div id={"home"} className={"relative flex w-full h-full flex-col items-center py-60 4k:py-0 4k:justify-center overflow-y-hidden"}>
                 <div className={"flex relative justify-center"}>
                     <motion.h1 className={"text-[1.75rem] text-center font-medium lg:text-6xl 2xl:text-8xl 4k:text-[12rem]"}
