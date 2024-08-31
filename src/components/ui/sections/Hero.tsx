@@ -53,7 +53,9 @@ const Hero = () => {
                     transition={{duration: 1, delay: 2}}
                 >
                     <Button variant={"default"} className={"mt-5 lg:hidden"} size={"lg"}>
-                        İletişime Geç
+                        <a href={"tel:+902128774903"}>
+                            İletişime Geç
+                        </a>
                     </Button>
                 </motion.div>
             </div>
