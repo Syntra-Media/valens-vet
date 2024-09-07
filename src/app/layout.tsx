@@ -4,6 +4,7 @@ import React from "react";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 import Script from "next/script";
+import {ClerkProvider} from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 

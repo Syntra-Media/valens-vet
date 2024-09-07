@@ -21,6 +21,10 @@ const ROUTES = [
         href: "home",
     },
     {
+        name: "Blog",
+        href: "blog",
+    },
+    {
         name: "Hakkımızda",
         href: "about",
     },
@@ -130,7 +134,7 @@ const Header = () => {
                                         <a onClick={() => handleClick(ROUTES[0].href)}>
                                             {ROUTES[0].name}
                                         </a>
-                                        <a onClick={() => handleClick(ROUTES[1].href)}>
+                                        <a href={"/"+ ROUTES[1].href}>
                                             {ROUTES[1].name}
                                         </a>
                                         <a onClick={() => setNavigationMenuOpen(!NavigationMenuOpen)}
@@ -143,6 +147,9 @@ const Header = () => {
                                         </a>
                                         <a onClick={() => handleClick(ROUTES[4].href)}>
                                             {ROUTES[4].name}
+                                        </a>
+                                        <a onClick={() => handleClick(ROUTES[5].href)}>
+                                            {ROUTES[5].name}
                                         </a>
                                     </div>
                                     <div
@@ -178,7 +185,7 @@ const Header = () => {
                     <a onClick={() => handleClick(ROUTES[0].href)}>
                         {ROUTES[0].name}
                     </a>
-                    <a onClick={() => handleClick(ROUTES[1].href)}>
+                    <a href={"/"+ ROUTES[1].href}>
                         {ROUTES[1].name}
                     </a>
                     <NavigationMenu>
@@ -206,10 +213,13 @@ const Header = () => {
                     <a onClick={() => handleClick(ROUTES[3].href)}>
                         {ROUTES[3].name}
                     </a>
+                    <a onClick={() => handleClick(ROUTES[4].href)}>
+                        {ROUTES[4].name}
+                    </a>
                     <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
                     >
-                        <a onClick={() => handleClick(ROUTES[4].href)}>
-                            {ROUTES[4].name}
+                        <a onClick={() => handleClick(ROUTES[5].href)}>
+                            {ROUTES[5].name}
                         </a>
                     </Button>
                 </div>
