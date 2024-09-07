@@ -1,10 +1,11 @@
 "use client";
 
 import React, {useEffect} from 'react';
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {Button} from "@/components/ui/Button";
 import { motion } from 'framer-motion';
 import Image from "next/image";
+import {MDXRemote} from "next-mdx-remote";
 
 const SERVICES = [
     {
@@ -249,7 +250,6 @@ const SERVICES = [
                     <p>
                         Evcil hayvanlarımız, zaman zaman çeşitli sağlık sorunlarıyla karşılaşabilirler. Bu nedenle, sahipler olarak sürekli olarak evcil dostlarımızı gözlemlemek ve sağlık durumlarını izlemek önemlidir. Birçok durumda, gözle görülemeyen hastalıklar laboratuvar testleriyle belirlenebilir. Bu süreçte, doğru veteriner kliniği ve uygun laboratuvar işbirliği, evcil hayvanlarımızın sağlık sorunlarının tespit edilmesi ve tedavi edilmesinde kritik bir rol oynar.
                         <br />
-                        <br />
                         Bazı veteriner klinikleri kendi laboratuvarlarına sahip olabilirken, diğerleri dış laboratuvarlarla anlaşma yaparlar. Her iki durumda da, laboratuvarlar veteriner hekimlere sağlık sorunlarını teşhis etme ve tedavi planlarını oluşturma konusunda önemli bilgiler sağlarlar. Laboratuvar testleri, genellikle muayene ile belirlenemeyen veya teşhis edilemeyen durumların belirlenmesinde kullanılır.
                     </p>
                 )
@@ -322,13 +322,42 @@ const SERVICES = [
 
 const Page = ({ params }: {params: {slug: string}}) => {
     const [service, setService] = React.useState(SERVICES.find(service => service.href === params.slug));
+    const [post, setPost] = React.useState<any>();
     const router = useRouter()
 
-    useEffect(() => {
-        if (!service) {
-            router.push("/not-found")
+    useEffect(  () => {
+        if (!service && !post) {
+            fetch(`/api/posts?name=${params.slug}`)
+            .then(res => res.json())
+            .then(data => {
+                setPost(data);
+                console.log(data);
+            })
+            .catch(err => {
+                router.push("/404");
+            })
         }
-    }, [service]);
+    }, [service, post]);
+
+    if (post) {
+        return (
+            <div className={"flex w-full justify-center items-center overflow-y-auto"}>
+                <div className={"w-full flex flex-col gap-4 mx-8 my-36 md:mx-32 lg:mx-80"}>
+                    <h1 className={"text-4xl font-medium"}>
+                        {post.title}
+                    </h1>
+                    <Image src={post.image} alt={post.title} width={512} height={512} className={"w-full mt-4 rounded-lg object-cover object-center"}/>
+                    <div className={"text-foreground/60 prose-lg lg:prose-xl w-full"}>
+                        <p dangerouslySetInnerHTML={{__html: post.content}}>
+                        </p>
+                    </div>
+                    <p>
+                        {new Date(post.createdAt).toLocaleDateString()}
+                    </p>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className={"flex w-full h-screen overflow-y-auto"}>
