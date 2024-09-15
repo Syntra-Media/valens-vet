@@ -62,7 +62,7 @@ export default function BlogPostList() {
                                         {new Date(post.createdAt).toLocaleDateString()}
                                     </p>
 
-                                    <Link href={"/" + encodeURIComponent(post.title)} className={"text-button underline"}>
+                                    <Link href={"/" + post.slug} className={"text-button underline"}>
                                         Devamını oku
                                     </Link>
                                 </div>
@@ -71,10 +71,10 @@ export default function BlogPostList() {
                     ))}
                 </div>
 
-                {posts.length > 0 &&
-                    <div className={"flex gap-2 mt-12"}>
-                        <Button onClick={() => setPage(page - 1)}>Previous</Button>
-                        <Button onClick={() => setPage(page + 1)}>Next</Button>
+                {posts.length > 9 &&
+                    <div className={"flex gap-4 mt-12"}>
+                        <Button onClick={() => setPage(page - 1)} disabled={page <= 1}>Önceki Sayfa</Button>
+                        <Button onClick={() => setPage(page + 1)}>Sonraki Sayfa</Button>
                     </div>
                 }
             </div>

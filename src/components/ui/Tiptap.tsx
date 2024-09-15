@@ -13,6 +13,7 @@ const Tiptap = ({onChange, content}: any) => {
     const editor = useEditor({
         extensions: [StarterKit, Underline],
         content: '<p>Buraya yaz!</p>',
+
         editorProps: {
             attributes: {
                 class: "prose lg:prose-sm max-w-none [&_ol]:list-decimal [&_ul]:list-disc w-full flex flex-col px-4 py-3 justify-start items-start border border-gray-700 rounded-b-lg min-h-60"
@@ -25,7 +26,7 @@ const Tiptap = ({onChange, content}: any) => {
     })
 
     return (
-        <div className={"w-full px-4"}>
+        <div className={"w-full mt-2"}>
             <Toolbar editor={editor} content={content}/>
             <EditorContent editor={editor} style={{whiteSpace: "pre-line"}} />
         </div>

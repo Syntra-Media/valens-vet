@@ -5,7 +5,6 @@ import {usePathname, useRouter} from "next/navigation";
 import {Button} from "@/components/ui/Button";
 import { motion } from 'framer-motion';
 import Image from "next/image";
-import {MDXRemote} from "next-mdx-remote";
 
 const SERVICES = [
     {
@@ -347,7 +346,7 @@ const Page = ({ params }: {params: {slug: string}}) => {
                         {post.title}
                     </h1>
                     <Image src={post.image} alt={post.title} width={512} height={512} className={"w-full mt-4 rounded-lg object-cover object-center"}/>
-                    <div className={"text-foreground/60 prose-lg lg:prose-xl w-full"}>
+                    <div className={"prose-lg lg:prose-xl text-foreground/80 w-full"}>
                         <p dangerouslySetInnerHTML={{__html: post.content}}>
                         </p>
                     </div>
