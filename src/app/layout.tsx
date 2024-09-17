@@ -18,7 +18,7 @@ const RootLayout = ({ children }: {children: React.ReactNode}) => {
   return (
       <html lang="tr">
         <body className={`${inter.className} bg-light text-foreground overflow-x-hidden scroll-smooth`}>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS7QHMKHRP"></script>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VS7QHMKHRP"></Script>
             <Script id="google-analytics" strategy="lazyOnload">
                 {`
                 window.dataLayer = window.dataLayer || [];

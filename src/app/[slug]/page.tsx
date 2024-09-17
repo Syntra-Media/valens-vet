@@ -336,7 +336,7 @@ const Page = ({ params }: {params: {slug: string}}) => {
                 router.push("/404");
             })
         }
-    }, [service, post]);
+    }, [service, post, params.slug, router]);
 
     if (post) {
         return (

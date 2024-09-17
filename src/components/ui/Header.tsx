@@ -96,7 +96,7 @@ const Header = () => {
         if (NavigationMenuOpen) {
             setNavigationMenuOpen(false);
         }
-    }, [activeSection, pathname])
+    }, [activeSection, pathname, menuOpen, NavigationMenuOpen]);
 
     const handleClick = (section: string) => {
         setActiveSection(section);
