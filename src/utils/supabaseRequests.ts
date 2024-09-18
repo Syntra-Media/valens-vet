@@ -8,7 +8,12 @@ export const getPosts = async ({page}: GetPostProps) => {
     const supabase = await supabaseClient();
 
     if (page) {
-        const {data, error} = await supabase.from("posts").select().range(page * 10, (page + 1) * 10 - 1);
+        let offset = 0;
+        if (page > 1) {
+            offset = (page - 1) * 10;
+        }
+
+        const {data, error} = await supabase.from("posts").select().range(offset, offset + 9);
 
         if (error) {
             console.error(error);
