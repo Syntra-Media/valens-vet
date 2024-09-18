@@ -5,6 +5,7 @@ import {usePathname, useRouter} from "next/navigation";
 import {Button} from "@/components/ui/Button";
 import { motion } from 'framer-motion';
 import Image from "next/image";
+import {getPost} from "@/utils/supabaseRequests";
 
 const SERVICES = [
     {
@@ -326,15 +327,16 @@ const Page = ({ params }: {params: {slug: string}}) => {
 
     useEffect(  () => {
         if (!service && !post) {
-            fetch(`/api/posts?name=${params.slug}`)
-            .then(res => res.json())
-            .then(data => {
-                setPost(data);
-                console.log(data);
-            })
-            .catch(err => {
-                router.push("/404");
-            })
+            const GetPostFromDB = async () => {
+                const post = await getPost({title: params.slug});
+
+                if (post) {
+                    setPost(post[0]);
+                } else {
+                    router.push("/");
+                }
+            }
+            GetPostFromDB();
         }
     }, [service, post, params.slug, router]);
 
@@ -351,7 +353,7 @@ const Page = ({ params }: {params: {slug: string}}) => {
                         </p>
                     </div>
                     <p>
-                        {new Date(post.createdAt).toLocaleDateString()}
+                        {post.date}
                     </p>
                 </div>
             </div>

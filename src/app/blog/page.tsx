@@ -6,14 +6,8 @@ import {Button} from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 import {Skeleton} from "@/components/ui/Skeleton";
+import {getPosts} from "@/utils/supabaseRequests";
 
-// Simulated API fetch function
-const fetchBlogPosts = async (page: number) => {
-    // Simulate fetching from an API with a page number
-    const response = await fetch(`/api/posts?page=${page}`);
-    const data = await response.json();
-    return data;
-};
 
 export default function BlogPostList() {
     const [posts, setPosts] = useState<any[]>([]); // Blog post data
@@ -22,10 +16,11 @@ export default function BlogPostList() {
 
     // Fetch blog posts when the page changes
     useEffect(() => {
-        fetchBlogPosts(page).then((data) => {
-            setPosts(data);
+        const GetPosts = async () => {
+            const posts = await getPosts({page});
+            setPosts(posts);
             setLoaded(true);
-        });
+        }
     }, [page]);
 
     return (
