@@ -1,34 +1,21 @@
-import {supabaseClient} from "@/utils/supabaseClient";
+import { supabaseClient } from "@/utils/supabaseClient";
 
 type GetPostProps = {
     page?: number;
 };
 
-export const getPosts = async ({page}: GetPostProps) => {
+export const getPosts = async ({ page }: GetPostProps) => {
     const supabase = await supabaseClient();
 
-    if (page) {
-        let offset = 0;
-        if (page > 1) {
-            offset = (page - 1) * 10;
-        }
-
-        const {data, error} = await supabase.from("posts").select().range(offset, offset + 9);
-
-        if (error) {
-            console.error(error);
-            return [];
-        }
-
-        data?.forEach((post: any) => {
-            post.reading_time = Math.ceil(post.content.split(" ").length / 200);
-            post.date = new Date(post.created_at).toLocaleDateString("tr-TR");
-        })
-
-        return data
+    let offset = 0;
+    if (page && page > 1) {
+        offset = (page - 1) * 10;
     }
 
-    const {data, error} = await supabase.from("posts").select();
+    const { data, error } = await supabase
+        .from("posts")
+        .select()
+        .range(offset, offset + 9);
 
     if (error) {
         console.error(error);
@@ -38,10 +25,10 @@ export const getPosts = async ({page}: GetPostProps) => {
     data?.forEach((post: any) => {
         post.reading_time = Math.ceil(post.content.split(" ").length / 200);
         post.date = new Date(post.created_at).toLocaleDateString("tr-TR");
-    })
+    });
 
     return data;
-}
+};
 
 export const createPost = async ({token, title, content, image, slug}: any) => {
     const supabase = await supabaseClient(token);
