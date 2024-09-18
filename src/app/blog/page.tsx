@@ -45,7 +45,7 @@ export default function BlogPostList() {
 
                     {loaded && posts.map((post, index) => (
                         <Link href={"/" + post.slug} key={index} className={"flex flex-col mx-8 lg:flex-row rounded-xl border-2 border-neutral-900/30"}>
-                            <Image src={post.image} alt={post.title} width={512} height={512} className={"rounded-t-xl w-full lg:rounded-l-xl lg:rounded-tr-none object-cover"} draggable={false} />
+                            <Image src={post.image} alt={post.title} width={512} height={512} className={"rounded-t-xl w-full max-w-96 lg:rounded-l-xl lg:rounded-tr-none object-cover"} draggable={false} />
                             <div className={"flex flex-col gap-2 lg:py-8 lg:px-8 px-4 py-4 w-full"}>
                                 <h2 className={" w-full text-2xl font-bold"}>
                                     {post.title}
