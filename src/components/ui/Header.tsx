@@ -188,11 +188,14 @@ const Header = () => {
                     <a href={"/"+ ROUTES[1].href}>
                         {ROUTES[1].name}
                     </a>
+                    <a onClick={() => handleClick(ROUTES[2].href)}>
+                        {ROUTES[2].name}
+                    </a>
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
-                                    {ROUTES[2].name}
+                                    {ROUTES[3].name}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="flex flex-col w-full px-8 py-4 gap-2 justify-center">
@@ -211,9 +214,6 @@ const Header = () => {
                         </NavigationMenuList>
                     </NavigationMenu>
                     <a onClick={() => handleClick(ROUTES[3].href)}>
-                        {ROUTES[3].name}
-                    </a>
-                    <a onClick={() => handleClick(ROUTES[4].href)}>
                         {ROUTES[4].name}
                     </a>
                     <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
