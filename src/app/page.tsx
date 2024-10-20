@@ -6,6 +6,7 @@ import Services from '@/components/ui/sections/Services';
 import Testimonials from "@/components/ui/sections/Testimonials";
 import Contact from "@/components/ui/sections/Contact";
 import Footer from "@/components/ui/Footer";
+import Adoption from '@/components/ui/sections/Adoption';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <AboutUs/>
             <Services/>
             <Testimonials/>
+            <Adoption/>
             <Contact/>
             <Footer/>
         </div>

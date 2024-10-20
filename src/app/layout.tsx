@@ -4,7 +4,7 @@ import React from "react";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 import Script from "next/script";
-import {ClerkProvider} from "@clerk/nextjs";
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +30,7 @@ const RootLayout = ({ children }: {children: React.ReactNode}) => {
             </Script>
             <Header/>
             {children}
+            <Toaster/>
         </body>
       </html>
   )

@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <div className={"flex w-full h-full justify-center"}>
                     <p className={"text-sm font-light 4k:text-3xl"}>
-                        valensveteriner.com sitesi <a className={"underline font-medium"} href={"https://syntramedia.com"}>Syntra Media</a> tarafından tasarlanmış ve geliştirilmiştir. Tüm hakları saklıdır © 2024 Valens Veteriner Kliniği.
+                        valensveterinerkliniği.com sitesi <a className={"underline font-medium"} href={"https://syntramedia.com"}>Syntra Media</a> tarafından tasarlanmış ve geliştirilmiştir. Tüm hakları saklıdır © 2024 Valens Veteriner Kliniği.
                     </p>
                 </div>
             </div>

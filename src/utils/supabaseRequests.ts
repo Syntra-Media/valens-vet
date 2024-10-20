@@ -89,3 +89,65 @@ export const getPost = async ({title}: any) => {
 
     return data;
 }
+
+export const getAdverts = async ({limit, page, category, skip, all}: any) => {
+    const supabase = await supabaseClient();
+
+    let query = supabase.from("adverts").select("*")
+
+    if (!all) {
+        query = query.eq('status', true)
+    }
+
+    if (category) {
+        query = query.eq('category', category)
+    }
+
+    if (limit) {
+        query = query.limit(limit)
+    }
+
+    if (page) {
+        const offset = (page - 1) * limit
+        query = query.range(offset, offset + limit - 1)
+    }
+
+    if (skip && Array.isArray(skip)) {
+        query = query.not('id', 'in', skip)
+    }
+
+    const {data, error} = await query;
+
+    if (error) {
+        console.error(error);
+        return [];
+    }
+
+    return data;
+}
+
+export const deleteAdvert = async ({token, id}: any) => {
+    const supabase = await supabaseClient(token);
+
+    const {data, error} = await supabase.from("adverts").delete().eq("id", id);
+
+    if (error) {
+        console.error(error);
+        return false;
+    }
+
+    return data;
+}
+
+export const approveAdvert = async ({token, id}: any) => {
+    const supabase = await supabaseClient(token);
+
+    const {data, error} = await supabase.from("adverts").update({status: true}).eq("id", id);
+
+    if (error) {
+        console.error(error);
+        return false;
+    }
+
+    return data;
+}

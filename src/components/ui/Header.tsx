@@ -10,10 +10,9 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger
 } from "@/components/ui/NavigationMenu";
-import {Button} from "@/components/ui/Button";
+import { Button } from './Button'  // Make sure it's 'Button', not 'button'
 import {AnimatePresence, motion} from "framer-motion";
 import {usePathname, useRouter} from "next/navigation";
-import Link from "next/link";
 
 const ROUTES = [
     {
