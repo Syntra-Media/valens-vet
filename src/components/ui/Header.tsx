@@ -13,6 +13,7 @@ import {
 import { Button } from './Button'  // Make sure it's 'Button', not 'button'
 import {AnimatePresence, motion} from "framer-motion";
 import {usePathname, useRouter} from "next/navigation";
+import Link from 'next/link';
 
 const ROUTES = [
     {
@@ -26,6 +27,10 @@ const ROUTES = [
     {
         name: "Hakkımızda",
         href: "about",
+    },
+    {
+        name: "Sahiplendirme",
+        href: "sahiplendirme",
     },
     {
         name: "Hizmetlerimiz",
@@ -190,11 +195,14 @@ const Header = () => {
                     <a onClick={() => handleClick(ROUTES[2].href)}>
                         {ROUTES[2].name}
                     </a>
+                    <Link href={"/" + ROUTES[3].href}>
+                        {ROUTES[3].name}
+                    </Link>
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
-                                    {ROUTES[3].name}
+                                    {ROUTES[4].name}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="flex flex-col w-full px-8 py-4 gap-2 justify-center">
@@ -213,12 +221,12 @@ const Header = () => {
                         </NavigationMenuList>
                     </NavigationMenu>
                     <a onClick={() => handleClick(ROUTES[3].href)}>
-                        {ROUTES[4].name}
+                        {ROUTES[5].name}
                     </a>
                     <Button variant={"default"} className={"4k:px-16 4k:py-8 4k:text-2xl"}
                     >
                         <a onClick={() => handleClick(ROUTES[5].href)}>
-                            {ROUTES[5].name}
+                            {ROUTES[6].name}
                         </a>
                     </Button>
                 </div>
