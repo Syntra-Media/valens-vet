@@ -31,8 +31,8 @@ async function SingleAdvert({params}: any) {
   const advert = await getAdvert({id: params.slug})
   const otherAdverts = await getAdverts({category: advert.category, limit: 3, skip: [advert.id]})
 
-  if (advert.status !== true) {
-    redirect("/")
+  if (!advert || advert.status !== true) {
+    redirect("/sahiplendirme")
   }
 
   return (
